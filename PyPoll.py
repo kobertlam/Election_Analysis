@@ -27,7 +27,7 @@ with open(file_to_load) as election_data:
 with open(file_to_save, "w") as txt_file:
 
     # Write some data to the file.
-    txt_file.write("Hello World\n")
+    txt_file.write("Hello World!\n")
     # Write three counties to the file.
     txt_file.write("Arapahoe\nDenver\nJefferson")
 
