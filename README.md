@@ -63,7 +63,7 @@ The script [PyPoll_Challenge.py](PyPoll_Challenge.py) we developed in this analy
     ```
     - Add a vote to that state-county-candidate's vote count.
     ```
-    state_county_candidate_date[i]["counts"] += 1
+    state_county_candidate_data[i]["counts"] += 1
     ```
     -  Use for-loop to get the state list from the dictionary `state_county_candidate_data`:
         -  For each state:
