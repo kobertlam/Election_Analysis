@@ -13,7 +13,7 @@ A Colorado Board of Elections employee has given you the following tasks to comp
 - Determine the winner of the election based on popular vote.
 
 ## Election Audit Results
-![Election Results in TXT](Resources/election_results.txt)
+![Election Results in TXT](analysis/election_results.txt)
 - How many votes were cast in this congressional election?
     - There were **369,711** votes cast in the election.
 
@@ -35,6 +35,14 @@ A Colorado Board of Elections employee has given you the following tasks to comp
 
 
 ## Election Audit Summary
+The script we developed in this analysis can be modified so that it can be used in other elections.
+1. sds
+    - sdgsgs
+    - sgd
+2. ssg
+    - gsdg
+    - sgdg
+
 provide a business proposal to the election commission on how this script can be used—with some modifications—for any election. Give at least two examples of how this script can be modified to be used for other elections.
 
 
