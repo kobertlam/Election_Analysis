@@ -39,25 +39,40 @@ A Colorado Board of Elections employee has given you the following tasks to comp
 
 ## Election Audit Summary
 The script [PyPoll_Challenge.py](PyPoll_Challenge.py) we developed in this analysis can be modified so that it can be used in other elections.
-1. Provide a breakdown of the number of votes and the percentage of the total votes each candidate received for each county
+1. Provide a breakdown of the number of votes and the percentage of the total votes each candidate received **for each county**
     - Create a list of dictionaries `county_candidate_data = []` where the keys are "county", "candidate" and "counts", and each county and each candidate, and the corresponding vote counts are the values for those keys.
     - In each row read from the CSV data file, if the current county and candidate is NOT in the dictionary `county_candidate_data`, append a new record to the dictionary.
     ```
-    county_candiate_data.append({"county":"Arapahoe", "candidate":"Charles Casper Stockham", "counts":0})
+    county_candidate_data.append({"county":"Arapahoe", "candidate":"Charles Casper Stockham", "counts":0})
     ```
     - Add a vote to that county-candidate's vote count.
     ```
     county_candidate_date[i]["counts"] += 1
     ```
     -  Write a for-loop to get the county from the dictionary `county_candidate_data`:
-        -  Retrieve the candidate name and the vote count for that candidate.
+        -  Retrieve the candidate name and the vote count for that candidate in that county.
         -  Calculate the votes as a percentage of the total votes of that county.
         -  Print the county-candidate results to the terminal and output file.
-2. ssg
-    - gsdg
-    - sgdg
 
-provide a business proposal to the election commission on how this script can be used—with some modifications—for any election. Give at least two examples of how this script can be modified to be used for other elections.
-
-
-
+2. Generalize the script to analyse election results for different states
+    - Assuming the source file [election_results.csv](Resources/election_results.csv) also included the "State" info
+    - Create a list of dictionaries `state_county_candidate_data = []` where the keys are "state", "county", "candidate" and "counts", and each state and each county and each candidate, and the corresponding vote counts are the values for those keys.
+    - In each row read from the CSV data file, if the current state and county and candidate is NOT in the dictionary `state_county_candidate_data`, append a new record to the dictionary.
+    ```
+    state_county_candidate_data.append({"state":"Colorado", "county":"Arapahoe", "candidate":"Charles Casper Stockham", "counts":0})
+    ```
+    - Add a vote to that state-county-candidate's vote count.
+    ```
+    state_county_candidate_date[i]["counts"] += 1
+    ```
+    -  Use for-loop to get the state list from the dictionary `state_county_candidate_data`:
+        -  For each state:
+            -  Use for-loop to get the county list of this state.
+            -  For each county:
+                -  Retrieve the candidate name and the vote count for that candidate in that county.
+                -  Calculate the votes as a percentage of the total votes of that county.
+                -  Print the county-candidate results to the terminal and output file.
+                -  Print the winning candidate information for this county.
+            -  Retrieve the vote counts in that state.
+            -  Calculate the votes as a percentage of the total votes of all the states.
+            -  Print the results to the terminal and output file.
