@@ -38,9 +38,8 @@ A Colorado Board of Elections employee has given you the following tasks to comp
 
 
 ## Election Audit Summary
-- The script [PyPoll_Challenge.py](PyPoll_Challenge.py) we developed in this analysis can be modified so that it can be used in other elections.
-- Generalize the script to analyse election results for different states
-- Assuming the source file [election_results.csv](Resources/election_results.csv) also included the "State" information at the second column (i.e. besides the Ballot ID)
+- The script [PyPoll_Challenge.py](PyPoll_Challenge.py) we developed in this analysis can be modified so that it can be used in other elections. Here we generalize the script to analyse election results for different states.
+- Assuming the source file [election_results.csv](Resources/election_results.csv) also included the "State" information at the second column (i.e. between the "Ballot ID" and "County")
     - The list index for reading data from the source file will need to modify according to the new CSV data structure.
         ```
         with open(file_to_load) as election_data:
@@ -64,7 +63,7 @@ A Colorado Board of Elections employee has given you the following tasks to comp
     - Create a list of dictionaries `state_county_candidate_data = []` where the keys are "state", "county", "candidate" and "counts", and each state and each county and each candidate, and the corresponding vote counts are the values for those keys.
     - In each row read from the CSV data file, if the current state and county and candidate is NOT in the dictionary `state_county_candidate_data`, append a new record to the dictionary.
     ```
-    state_county_candidate_data.append({"state":"Colorado", "county":"Arapahoe", "candidate":"Charles Casper Stockham", "counts":0})
+    state_county_candidate_data.append({"state":state_name, "county":county_name, "candidate":candidate_name, "counts":0})
     ```
     - Add a vote to that state-county-candidate's vote count.
     ```
