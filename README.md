@@ -38,25 +38,29 @@ A Colorado Board of Elections employee has given you the following tasks to comp
 
 
 ## Election Audit Summary
-The script [PyPoll_Challenge.py](PyPoll_Challenge.py) we developed in this analysis can be modified so that it can be used in other elections.
-1. Provide a breakdown of the number of votes and the percentage of the total votes each candidate received **for each county**
-    - Create a list of dictionaries `county_candidate_data = []` where the keys are "county", "candidate" and "counts", and each county and each candidate, and the corresponding vote counts are the values for those keys.
-    - In each row read from the CSV data file, if the current county and candidate is NOT in the dictionary `county_candidate_data`, append a new record to the dictionary.
-    ```
-    county_candidate_data.append({"county":"Arapahoe", "candidate":"Charles Casper Stockham", "counts":0})
-    ```
-    - Add a vote to that county-candidate's vote count.
-    ```
-    county_candidate_data[i]["counts"] += 1
-    ```
-    -  Write a for-loop to get the county from the dictionary `county_candidate_data`:
-        -  Retrieve the candidate name and the vote count for that candidate in that county.
-        -  Calculate the votes as a percentage of the total votes of that county.
-        -  Print the county-candidate results to the terminal and output file.
+- The script [PyPoll_Challenge.py](PyPoll_Challenge.py) we developed in this analysis can be modified so that it can be used in other elections.
+- Generalize the script to analyse election results for different states
+- Assuming the source file [election_results.csv](Resources/election_results.csv) also included the "State" information at the second column (i.e. besides the Ballot ID)
+    - The list index for reading data from the source file will need to modify according to the new CSV data structure.
+        ```
+        with open(file_to_load) as election_data:
+            reader = csv.reader(election_data)
 
-2. Generalize the script to analyse election results for different states
-    - Assuming the source file [election_results.csv](Resources/election_results.csv) also included the "State" info
-        - The list index for reading data from the source file may need to modify according to the new CSV data structure.
+            # Read the header
+            header = next(reader)
+
+            # For each row in the CSV file.
+            for row in reader:
+                # Add to the total vote count
+                total_votes = total_votes + 1
+
+                # Extract the state name from each row.
+                state_name = row[1]
+                # Extract the county name from each row.
+                county_name = row[2]
+                # Get the candidate name from each row.
+                candidate_name = row[3]
+        ```
     - Create a list of dictionaries `state_county_candidate_data = []` where the keys are "state", "county", "candidate" and "counts", and each state and each county and each candidate, and the corresponding vote counts are the values for those keys.
     - In each row read from the CSV data file, if the current state and county and candidate is NOT in the dictionary `state_county_candidate_data`, append a new record to the dictionary.
     ```
