@@ -13,25 +13,25 @@ A Colorado Board of Elections employee has given you the following tasks to comp
 - Determine the winner of the election based on popular vote.
 
 ## Election Audit Results
-![Election Results in TXT](analysis/election_results.txt)
+[Election Results in TXT](analysis/election_results.txt)
 - How many votes were cast in this congressional election?
-    - There were **369,711** votes cast in the election.
+    - There were **_369,711_** votes cast in the election.
 
 - Provide a breakdown of the number of votes and the percentage of total votes for each county in the precinct.
-    - County **Jefferson** received 38,855 number of votes and 10.5% out of the total votes.
-    - County **Denver** received 306,055 number of votes and 82.8% out of the total votes.
-    - County **Arapahoe** received 24,801 number of votes and 6.7% out of the total votes.
+    - County **_Jefferson_** received **_38,855_** number of votes and **_10.5%_** out of the total votes.
+    - County **_Denver_** received **_306,055_** number of votes and **_82.8%_** out of the total votes.
+    - County **_Arapahoe_** received **_24,801_** number of votes and **_6.7%_** out of the total votes.
 
 - Which county had the largest number of votes?
-    - **Denver** had the largest number of votes.
+    - **_Denver_** had the largest number of votes.
 
 - Provide a breakdown of the number of votes and the percentage of the total votes each candidate received.
-    - Candidate **Charles Casper Stockham** received 23.0% of the votes and 85,213 number of votes.
-    - Candidate **Diana DeGette** received 73.8% of the votes and 272,892 number of votes.
-    - Candidate **Raymon Anthony Doane** received 3.1% of the votes and 11,606 number of votes.
+    - Candidate **_Charles Casper Stockham_** received **_23.0%_** of the votes and **_85,213_** number of votes.
+    - Candidate **_Diana DeGette_** received **_73.8%_** of the votes and **_272,892_** number of votes.
+    - Candidate **_Raymon Anthony Doane_** received **_3.1%_** of the votes and **_11,606_** number of votes.
 
 - Which candidate won the election, what was their vote count, and what was their percentage of the total votes?
-    - Candidate **Diana DeGette**, who received 73.81% of the votes and 272,892 number of votes.
+    - Candidate **_Diana DeGette_**, who received **_73.81%_** of the votes and **_272,892_** number of votes.
 
 
 ## Election Audit Summary
