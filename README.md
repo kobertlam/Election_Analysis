@@ -56,6 +56,7 @@ The script [PyPoll_Challenge.py](PyPoll_Challenge.py) we developed in this analy
 
 2. Generalize the script to analyse election results for different states
     - Assuming the source file [election_results.csv](Resources/election_results.csv) also included the "State" info
+        - The list index for reading data from the source file may need to modify according to the new CSV data structure.
     - Create a list of dictionaries `state_county_candidate_data = []` where the keys are "state", "county", "candidate" and "counts", and each state and each county and each candidate, and the corresponding vote counts are the values for those keys.
     - In each row read from the CSV data file, if the current state and county and candidate is NOT in the dictionary `state_county_candidate_data`, append a new record to the dictionary.
     ```
