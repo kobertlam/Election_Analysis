@@ -47,7 +47,7 @@ The script [PyPoll_Challenge.py](PyPoll_Challenge.py) we developed in this analy
     ```
     - Add a vote to that county-candidate's vote count.
     ```
-    county_candidate_date[i]["counts"] += 1
+    county_candidate_data[i]["counts"] += 1
     ```
     -  Write a for-loop to get the county from the dictionary `county_candidate_data`:
         -  Retrieve the candidate name and the vote count for that candidate in that county.
