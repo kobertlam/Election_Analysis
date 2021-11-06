@@ -14,6 +14,7 @@ A Colorado Board of Elections employee has given you the following tasks to comp
 
 ## Election Audit Results
 ![Election Results from Terminal](analysis/election_results_terminal.png)
+
 [Election Results in TXT file](analysis/election_results.txt)
 
 - How many votes were cast in this congressional election?
@@ -37,10 +38,21 @@ A Colorado Board of Elections employee has given you the following tasks to comp
 
 
 ## Election Audit Summary
-The script [PyPoll_Challenge.py](PyPoll_Challenge.py] we developed in this analysis can be modified so that it can be used in other elections.
-1. sds
-    - sdgsgs
-    - sgd
+The script [PyPoll_Challenge.py](PyPoll_Challenge.py) we developed in this analysis can be modified so that it can be used in other elections.
+1. Provide a breakdown of the number of votes and the percentage of the total votes each candidate received for each county
+    - Create a list of dictionaries `county_candidate_data = []` where the keys are "county", "candidate" and "counts", and each county and each candidate, and the corresponding vote counts are the values for those keys.
+    - In each row read from the CSV data file, if the current county and candidate is NOT in the dictionary `county_candidate_data`, append a new record to the dictionary.
+    ```
+    county_candiate_data.append({"county":"Arapahoe", "candidate":"Charles Casper Stockham", "counts":0})
+    ```
+    - Add a vote to that county-candidate's vote count.
+    ```
+    county_candidate_date[i]["counts"] += 1
+    ```
+    -  Write a for-loop to get the county from the dictionary `county_candidate_data`:
+        -  Retrieve the candidate name and the vote count for that candidate.
+        -  Calculate the votes as a percentage of the total votes of that county.
+        -  Print the county-candidate results to the terminal and output file.
 2. ssg
     - gsdg
     - sgdg
