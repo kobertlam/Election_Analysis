@@ -12,7 +12,9 @@ A Colorado Board of Elections employee has given you the following tasks to comp
 - Calculate the percentage of votes each candidate won.
 - Determine the winner of the election based on popular vote.
 
+
 ## Election Audit Results
+Election Results output to Terminal
 ![Election Results from Terminal](analysis/election_results_terminal.png)
 
 [Election Results in TXT file](analysis/election_results.txt)
@@ -38,45 +40,48 @@ A Colorado Board of Elections employee has given you the following tasks to comp
 
 
 ## Election Audit Summary
-- The script [PyPoll_Challenge.py](PyPoll_Challenge.py) we developed in this analysis can be modified so that it can be used in other elections. Here we generalize the script to analyse election results for different states.
-- Assuming the source file [election_results.csv](Resources/election_results.csv) also included the "State" information at the second column (i.e. between the "Ballot ID" and "County")
-    - The list index for reading data from the source file will need to modify according to the new CSV data structure.
-        ```
-        with open(file_to_load) as election_data:
-            reader = csv.reader(election_data)
+- The script [PyPoll_Challenge.py](PyPoll_Challenge.py) we developed in this analysis can be modified so that it can be used in other elections. Here we may generalize the script to analyse election results for different states:
+    1. Retrieve additional "State" information from the source file.
+        - Assume the source file [election_results.csv](Resources/election_results.csv) also included the "State" information at the second column (i.e. between the "Ballot ID" and "County")
+        - The list index for reading data from the source file cen be modifed according to the new CSV data structure.
+            ```
+            with open(file_to_load) as election_data:
+                reader = csv.reader(election_data)
 
-            # Read the header
-            header = next(reader)
+                # Read the header
+                header = next(reader)
 
-            # For each row in the CSV file.
-            for row in reader:
-                # Add to the total vote count
-                total_votes = total_votes + 1
+                # For each row in the CSV file.
+                for row in reader:
+                    # Add to the total vote count
+                    total_votes = total_votes + 1
 
-                # Extract the state name from each row.
-                state_name = row[1]
-                # Extract the county name from each row.
-                county_name = row[2]
-                # Get the candidate name from each row.
-                candidate_name = row[3]
-        ```
-    - Create a list of dictionaries `state_county_candidate_data = []` where the keys are "state", "county", "candidate" and "counts", and each state and each county and each candidate, and the corresponding vote counts are the values for those keys.
-    - In each row read from the CSV data file, if the current state and county and candidate is NOT in the dictionary `state_county_candidate_data`, append a new record to the dictionary.
-    ```
-    state_county_candidate_data.append({"state":state_name, "county":county_name, "candidate":candidate_name, "counts":0})
-    ```
-    - Add a vote to that state-county-candidate's vote count.
-    ```
-    state_county_candidate_data[i]["counts"] += 1
-    ```
-    -  Use for-loop to get the state list from the dictionary `state_county_candidate_data`:
-        -  For each state:
-            -  Use for-loop to get the county list of this state.
-            -  For each county:
-                -  Retrieve the candidate name and the vote count for that candidate in that county.
-                -  Calculate the votes as a percentage of the total votes of that county.
-                -  Print the county-candidate results to the terminal and output file.
-                -  Print the winning candidate information for this county.
-            -  Retrieve the vote counts in that state.
-            -  Calculate the votes as a percentage of the total votes of all the states.
-            -  Print the results to the terminal and output file.
+                    # Extract the state name from each row.
+                    state_name = row[1]
+                    # Extract the county name from each row.
+                    county_name = row[2]
+                    # Get the candidate name from each row.
+                    candidate_name = row[3]
+            ```
+    2. Use a list of dictionaries to keep and manipulate the vote information
+        - Create a list of dictionaries `state_county_candidate_data = []` where the keys are "state", "county", "candidate" and "counts", and each state and each county and each candidate, and the corresponding vote counts are the values for those keys.
+        - In each row read from the CSV data file, if the current state and county and candidate is NOT in the dictionary `state_county_candidate_data`, append a new record to the dictionary.
+            ```
+            state_county_candidate_data.append({"state":state_name, "county":county_name, "candidate":candidate_name, "counts":0})
+            ```
+        - Add a vote to that state-county-candidate's vote count.
+            ```
+            state_county_candidate_data[i]["counts"] cd d+= 1
+            ```
+        -  Use for-loop to get the state list from the dictionary `state_county_candidate_data`:
+            -  For each state:
+                -  Use for-loop to get the county list of this state.
+                -  For each county:
+                    -  Retrieve the candidate name and the vote count for that candidate in that county.
+                    -  Calculate the votes as a percentage of the total votes of that county.
+                    -  Print the county-candidate results to the terminal and output file.
+                    -  Print the winning candidate information for this county.
+                -  Retrieve the vote counts in that state.
+                -  Calculate the votes as a percentage of the total votes of all the states.
+                -  Print the results to the terminal and output file.
+
