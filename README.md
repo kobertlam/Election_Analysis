@@ -71,6 +71,7 @@ Election results output to Terminal
             ```
         - Add a vote to that state-county-candidate's vote count.
             ```
+            # "i" is the list index
             state_county_candidate_data[i]["counts"] += 1
             ```
         -  Use for-loop to get the state list from the dictionary `state_county_candidate_data`:
