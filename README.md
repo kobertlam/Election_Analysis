@@ -14,7 +14,7 @@ A Colorado Board of Elections employee has given you the following tasks to comp
 
 
 ## Election Audit Results
-Election Results output to Terminal
+Election results output to Terminal
 ![Election Results from Terminal](analysis/election_results_terminal.png)
 
 [Election Results in TXT file](analysis/election_results.txt)
