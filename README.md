@@ -65,15 +65,16 @@ Election results output to Terminal
             ```
     2. Use a list of dictionaries to keep and manipulate the vote information
         - Create a list of dictionaries `state_county_candidate_data = []` where the keys are "state", "county", "candidate" and "counts", and each state and each county and each candidate, and the corresponding vote counts are the values for those keys.
-        - In each row read from the CSV data file, if the current state and county and candidate is NOT in the dictionary `state_county_candidate_data`, append a new record to the dictionary.
-            ```
-            state_county_candidate_data.append({"state":state_name, "county":county_name, "candidate":candidate_name, "counts":0})
-            ```
-        - Add a vote to that state-county-candidate's vote count.
-            ```
-            # "i" is the list index
-            state_county_candidate_data[i]["counts"] += 1
-            ```
+        - In each row read from the CSV data file:
+            - If the current state and county and candidate is NOT in the dictionary `state_county_candidate_data`, append a new record to the dictionary.
+                ```
+                state_county_candidate_data.append({"state":state_name, "county":county_name, "candidate":candidate_name, "counts":0})
+                ```
+            - Add a vote to that state-county-candidate's vote count.
+                ```
+                # "i" is the list index
+                state_county_candidate_data[i]["counts"] += 1
+                ```
         -  Use for-loop to get the state list from the dictionary `state_county_candidate_data`:
             -  For each state:
                 -  Use for-loop to get the county list of this state.
